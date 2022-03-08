@@ -1,16 +1,16 @@
-import abi from "abi/abi.json" assert {type: "json"};
+import abi from "./abi/abi.json" assert {type: "json"};
 
-// SC: 0x6fb89b812c757b87e4dcc638d284e8735c9229bd
+// SC: 0x5a0c8772782b116ac271d559c7eFE4C50E86322D
 
 const blockchain = new Promise((res, err) =>{
     // Metamask is not available
-    if(typeof window.ethereum == "undefined"){
+    if(typeof window.ethereum == undefined){
         err("You should install Metamask");
     }
 
     // Instance Web3
     let web3 = new Web3(window.ethereum);
-    let contract = new web3.eth.Contract(abi, 0x6fb89b812c757b87e4dcc638d284e8735c9229bd);
+    let contract = new web3.eth.Contract(abi, "0x5a0c8772782b116ac271d559c7eFE4C50E86322D");
 
     // Get my Metamask address
     web3.eth.getAccounts().then((accounts)=>{
@@ -49,4 +49,6 @@ const blockchain = new Promise((res, err) =>{
            });
         });
     } );
-})
+});
+
+export default blockchain;

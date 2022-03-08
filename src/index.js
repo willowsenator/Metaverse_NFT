@@ -1,4 +1,5 @@
 import Movements from "./movements.js";
+import blockchain from "./web3.js";
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('skyblue')
@@ -23,7 +24,7 @@ scene.add( space )
 
 
 // Geometric figure: Cube
-const geometry = new THREE.BoxGeometry();
+/*const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
@@ -41,13 +42,13 @@ const material_cylinder = new THREE.MeshPhongMaterial( {color: 0xffff00} );
 const cylinder = new THREE.Mesh( geometry_cylinder, material_cylinder );
 scene.add( cylinder );
 cylinder.position.set(-10, 10, 0)
-scene.add(cylinder);
+scene.add(cylinder);*/
 
 
 camera.position.set(10, 10, 50);
 
 function animate() {
-    cube.rotateX(0.01);
+   /* cube.rotateX(0.01);
     cube.rotateY(0.001);
     cube.rotateZ(0.0001);
 
@@ -55,7 +56,9 @@ function animate() {
     cone.rotateY(0.02);
 
     cylinder.rotateY(0.05)
-    cylinder.rotateX(0.03)
+    cylinder.rotateX(0.03)*/
+
+
     requestAnimationFrame( animate );
 
     // Left Movement
