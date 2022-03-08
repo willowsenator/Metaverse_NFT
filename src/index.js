@@ -89,3 +89,16 @@ function animate() {
 }
 
 animate();
+
+// Web3 connection and add buildings to Metaverse
+blockchain.then(result => {
+   result.buildings.forEach((building, index) =>{
+      if(index < result.supply){
+          const geometry_nft = new THREE.BoxGeometry(building.w, building.h, building.d);
+          const material_nft = new THREE.MeshPhongMaterial({color: 0x3affea});
+          const nft = new THREE.Mesh(geometry_nft, material_nft);
+          scene.add(nft);
+          nft.position.set(building.x, building.y, building.z);
+      }
+   });
+});

@@ -45,7 +45,7 @@ const blockchain = new Promise((res, err) =>{
     web3.eth.getAccounts().then((accounts)=>{
         contract.methods.getTotalSupply().call({from: accounts[0]}).then((supply) =>{
            contract.methods.getBuildings().call({from: accounts[0]}).then((data)=>{
-               res({supply: supply, building: data});
+               res({supply: supply, buildings: data});
            });
         });
     } );
