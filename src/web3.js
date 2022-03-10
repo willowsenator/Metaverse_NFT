@@ -50,8 +50,10 @@ const blockchain = new Promise((res, err) => {
 export default blockchain;
 
 
-export const mint = function(nft_name, width, height, depth, x, y, z){
+function mint(nft_name, width, height, depth, x, y, z){
     contract.methods.mint(nft_name, width, height, depth, x, y, z).send({from: account}).then(data=>{
        console.log("NFT available in the Metaverse!!");
     });
 }
+
+export {mint};
