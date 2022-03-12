@@ -1,6 +1,6 @@
 import Movements from "./movements.js";
 import blockchain from "./web3.js";
-import {mint} from "./web3.js";
+import {mint, withdraw} from "./web3.js";
 import * as THREE from "three";
 import { OrbitControls } from "../../libraries/controls/OrbitControls.js";
 
@@ -105,4 +105,12 @@ function mint_NFT() {
 
     mint(nft_name, nft_width, nft_height, nft_depth, nft_posX, nft_posY, nft_posZ);
 
+}
+
+// Withdraw Balance from the Metaverse
+const withdraw_button = document.getElementById("withdraw");
+withdraw_button.addEventListener("click", withdraw_from_metaverse);
+
+function withdraw_from_metaverse(){
+    withdraw();
 }

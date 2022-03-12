@@ -56,3 +56,11 @@ function mint(nft_name, width, height, depth, x, y, z){
 }
 
 export {mint};
+
+function withdraw(){
+    contract.methods.withdraw().send({from: account}).then(data =>{
+        console.log("Send profit to Owner!!");
+    });
+}
+
+export {withdraw};
