@@ -1,6 +1,5 @@
 import abi from "../abi/abi.json" assert {type: "json"};
-
-// SC: 0x5a0c8772782b116ac271d559c7eFE4C50E86322D
+import {smartContractAddress} from "./smart_contract_params.js";
 
 let contract;
 let account;
@@ -15,7 +14,7 @@ const blockchain = new Promise((res, err) => {
     // Instance Web3
     let web3 = new Web3(window.ethereum);
 
-    contract = new web3.eth.Contract(abi, "0x34424C79574A9748458eE7Df5d97d1cA7B45fdeA");
+    contract = new web3.eth.Contract(abi, smartContractAddress);
 
 
     web3.eth.getAccounts().then((accounts) => {
