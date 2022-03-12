@@ -6,7 +6,7 @@ import "@openzeppelin/contracts@4.5.0/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts@4.5.0/access/Ownable.sol";
 import "@openzeppelin/contracts@4.5.0/utils/Counters.sol";
 
-// Address: 0x34424C79574A9748458eE7Df5d97d1cA7B45fdeA
+// Address: 0x7B7c04e25433801B8306C48889F9a112532d4A11
 
 
 //Creation Metaverse Smart Contract with NFT Tokens
@@ -25,7 +25,7 @@ contract Metaverse is ERC721, Ownable{
 
 
     // Cost NFT Token
-    uint256 public cost = 0 ether;
+    uint256 public cost = 0.1 ether;
 
 
     // NTFS Owners
