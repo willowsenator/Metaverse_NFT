@@ -1,4 +1,4 @@
-import abi from "./abi/abi.json" assert {type: "json"};
+import abi from "../abi/abi.json" assert {type: "json"};
 
 // SC: 0x5a0c8772782b116ac271d559c7eFE4C50E86322D
 
