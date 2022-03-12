@@ -55,6 +55,11 @@ contract Metaverse is ERC721, Ownable{
         return supply.current();
     }
 
+    // Get cost NFT
+    function getCost() public view returns(uint256){
+        return cost;
+    }
+
     // Mint NFT Metaverse token
     function mint(string memory _name, uint8 _w, uint8 _h, uint8 _d, int8 _x, int8 _y, int8 _z) public payable {
         require(supply.current() <= maxSupply, "MAX supply reached!!");
