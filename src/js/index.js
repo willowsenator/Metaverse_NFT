@@ -15,7 +15,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Orbit controls
-const controls = new OrbitControls( camera, renderer.domElement );
+let controls = new OrbitControls( camera, renderer.domElement );
 
 // Settings scene lights
 const ambient_light = new THREE.AmbientLight(0x404040);
@@ -29,6 +29,7 @@ const material_space = new THREE.MeshPhongMaterial({color: 0xffffff});
 const space = new THREE.Mesh(geometry_space, material_space);
 scene.add(space);
 
+window.addEventListener("resize", onWindowResize);
 
 camera.position.set(10, 10, 50);
 
@@ -63,6 +64,14 @@ function animate() {
     camera.lookAt(space.position);
 
     renderer.render(scene, camera);
+}
+
+function onWindowResize() {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
 }
 
 animate();
