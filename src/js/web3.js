@@ -50,9 +50,12 @@ export default blockchain;
 
 
 function mint(nft_name, width, height, depth, x, y, z){
-    contract.methods.mint(nft_name, width, height, depth, x, y, z).send({from: account}).then(data=>{
-       console.log("NFT available in the Metaverse!!");
+    contract.methods.getCost().call({from: account}).then(cost=> {
+        contract.methods.mint(nft_name, width, height, depth, x, y, z).send({from: account, value: cost}).then(data=>{
+            console.log("NFT available in the Metaverse!!");
+        });
     });
+
 }
 
 export {mint};
